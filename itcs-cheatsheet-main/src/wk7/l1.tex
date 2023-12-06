@@ -1,0 +1,16 @@
+\wde{Time Complexity} The \textit{time complexity} of a (deterministic) machine $M$ that halts on all inputs is a function $f : \mathbb{N} \to \mathbb{N}$ where $f(n)$ is the maximum number of steps that $M$ uses on any input of size $n$.
+\wde{Big $\bO$ and $\Omega$} Let $f,g : \mathbb{N} \to \mathbb{R}_{\ge 0}$. Say that $f(n) \in \bO$ if there exits $c, n_0 > 0$ such that for all $n > n_0$: 
+$f(n) \le c \cdot g(n)$.
+Similarly $f(n) \in \Omega(g(n))$ if: 
+$f(n) \ge c \cdot g(n)$.
+\wde{$\TIME$ complexity class} Let $f : \mathbb{N} \to \mathbb{R}_{\ge 0}$. A \textit{time complexity class} $\TIME(t(n))$ to be the collection of all problems that are decidable by a machine in $\bO(t(n))$ time.
+\wde{$\Pc$olynomial Time} $\Pc = \bigcup_{k \in \mathbb{N}} \TIME(n^k)$. That is, the class of problems decidable with some (deterministic) polynomial time complexity. Problems in $\Pc$ are called \textit{tractable}, and the class is robust.
+Any problem not in $\Pc$ is $\Omega(n^k)\ \forall k$.
+\wde{Polynomially-bounded RM} is an $RM$ together with a polynomial with order $k$ for some $k$, such that given an input $w$, it will always halt after executing $|w|^k$ instructions. A problem $Q$ is in $\Pc$ iff it is computed by polynomially-bounded RM.
+\wde{Polynomial Reduction} A \textit{polynomial reduction} from $P_1 = (D_1, Q_1)$ to $P_2 = (D_2, Q_2)$ is a $\Pc$-computable function $f: D_1 \to D_2$ such that $d \in Q_1$ iff $f(d) \in Q_2$.
+\wt{Checkable $\Rightarrow$ comp. on NRM} Any problem that can be checked in polynomial time on a deterministic RM/TM can be computed in polynomial time on a \emph{nondeterministic RM/TM}.
+\wde{NRM} To change an RM to a nondeterministic RM (NRM) add a special instruction $\Mbe(j)$ that will nondeterministically either do nothing or jump to $I_j$.
+\wde{Acceptance (NRM)} An NRM accepts if there is some run (sequence of instructions through the choices) that halts and accepts.
+\wt{NRM Power} NRMs have the same deciding power as RMs, because we can use the interleaving technique to simulate all runs of an NRM.
+\wde{$\NTIME$} Let $t : \mathbb{N} \to \mathbb{R}_{\ge 0}$. Define $\NTIME(t(n))$ to be the collection of all problems that are decidable by an NRM in $\bO(t(n))$ time.
+\wde{$\NP$}  $\NP = \bigcup_{k \in \mathbb{N}} \NTIME(n^k)$. That is, the class of problems decidable with some nondeterministic polynomial time complexity.

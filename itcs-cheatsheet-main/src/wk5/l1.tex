@@ -1,0 +1,8 @@
+\wde{Computable} A (total) function $\bb{N} \to \bb{N}$ is \emph{computable} if there is an RM/TM which computes $f$, i.e., given an $x$ in $R_0$, leaves $f(x)$ in $R_0$.
+\wde{Decision Problem} A \emph{decision problem} is a set $D$ and a query subset $Q \subseteq D$. A problem is \emph{decidable} or \emph{computable} if $d \in Q$ is characterised by a computable function $f: D\to \{0,1\}$.
+\wpr{Decidable closure} Decidable Languages are closed under: Union, Intersection, and Complement.
+\wde{Reduction} A \emph{reduction} is a transformation from one problem to another. To prove that a problem $P_2$ is undecidable, show that there is a computable reduction from a known undecidable $P_1$ to $P_2$.
+\wde{Mapping Reduction} A mapping reduction from $P_1$ to $P_2$ is a Turing transducer $f$ as above such that $d \in Q_1$ iff $f(d) \in Q_2$.
+\wde{Oracles} Given a decision problem $(D,Q)$, an \emph{oracle} for $Q$ is a `magic' RM instruction $\Oracle_Q(i)$ which, given an encoding of $d \in D$ in $R_i$, sets $R_i$ to contain 1 iff $d \in Q$.
+\wde{Turing Reduction} A \emph{Turing reduction} from $P_1$ to $P_2$ is an RM/TM equipped with an Oracle for $P_2$ that solves $P_1$.
+\wt{Rices} All nontrivial semantic properties are undecidable.

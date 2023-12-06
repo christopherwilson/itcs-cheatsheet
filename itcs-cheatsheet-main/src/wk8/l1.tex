@@ -1,0 +1,21 @@
+\wde{$\CoNP$} $\CoNP$ is the complement of $\NP$.
+\wde{$\sigp{1}$} The set $\sigp{1}$ describes all problems that can be phrased as $\{y\ |\ \exists^{\Pc} x \in \mathbb{N}. R(x,y)\}$, where $R$ is a $\Pc$-decidable predicate and $\exists^{\Pc}x \ldots$ indicates that $x$ is of size polynomial in the size of $y$. Also, $\NP = \sigp{1}$.
+\wde{Certificates} We can say that $x$ is a \emph{certificate} showing which ``guesses'' can made by our NRM giving an accepting run.
+\wde{$\pip{1}$} The set $\pip{1}$ describes all problems that can be phrased as $\{y\ |\ \forall^{\Pc} x \in \mathbb{N}. R(x,y)\}$, where $R$ is a $\Pc$-decidable predicate and $\forall^{\Pc}x \ldots$ indicates that $x$ is of size polynomial in the size of $y$. Also, $\CoNP = \pip{1}$.
+\wde{$\delp{1}$} Two definitions, either: the set $\delp{1}$ describes the intersection of $\sigp{1}$ and $\pip{1}$; or the set $\delp{1}$ describes the set $\Pc$
+\wde{$\sigp{2},\pip{2}, \delp{2}$} $\sigp{2}$ is all problems of form $\{x | \exists^{\Pc}y.\forall^{\Pc}z. R(x,y,z)\}$;
+$\pip{2}$ is all problems of form $\{x | \forall^{\Pc}y.\exists^{\Pc}z. R(x,y,z)\}$; $\delp{2} = \sigp{2} \cap \pip{2}$.
+\wde{Alt $\sigp{2},\pip{2}, \delp{2}$} We can define in terms of oracles:
+$\delp{2}$ is $\Pc$ with an $\bO(1)$ oracle for $\NP$;
+$\sigp{2}$ is $\NP$ with an $\bO(1)$ oracle for $\NP$;
+$\pip{2}$ is $\CoNP$ with an $\bO(1)$ oracle for $\NP$.
+\wde{Co-nondeterminism} \emph{Demonic} nondeterminism. Like determinism but only accepts if \emph{all} paths accept.
+\wde{Alternation} $\sigp{n}$ are all problems that can be phrased as some alternation of $\Pc$-bounded quantifiers, starting with $\exists^{\Pc}$: 
+$\{w\ |\ \exists^{\Pc}x_1.\forall^{\Pc}x_2.\exists^{\Pc}x_3.\forall^{\Pc}x_4.\ldots x_n.R(w,x_1,\ldots,x_n)\}$.
+$\pip{n}$ starts instead with $\forall^{\Pc}$.
+\wde{Alternating RM} Consider NRMs where instead of just a $\Mbe$ instruction we have a $\Mbee$ instruction and a $\Mbea$ instruction. 
+$\Mbee$ is a nondeterministic choice where we accept if \emph{one} branch accepts. 
+$\Mbea$ is a nondeterministic choice where we accept only if \emph{both} branches accepts. 
+\wde{$\PSPACE$} An RM/TM is $f(n)$-space-bounded if it may use only $f(\mathrm{inputsize})$ space. For TMs, space means cells on tape; for RMs, number of bits in registers. 
+$\PSPACE$ is the class of problems solvable by polynomially-space-bounded machines. $\PSPACE \supseteq \Pc$, $\PSPACE\supseteq \NP$, $\EXPTIME \supseteq \PSPACE$
+\wde{$\AP$} $\AP$ is the class of all problems decidable by an alternating machine in polynomial time, without any restriction on swapping quantifiers. $\AP = \PSPACE$.

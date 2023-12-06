@@ -1,0 +1,27 @@
+\wde{$\mathcal{Y}$} The fixed point combinator is defined: $\mathcal{Y} \equiv (\lambda f.\ (\lambda x.\ f\ (x\ x))\ (\lambda x.\ f\ (x\ x))$
+\wa{Adding Types}
+(1) Fix a set of base types ($\nat, \bool$, etc.);
+(2) If $\sigma$ and $\tau$ are types, then $\sigma \to \tau$ is a type of a function from $\sigma$ to $\tau$. It is right-associative: $\sigma \to \tau \to \rho = \sigma \to (\tau \to \rho)$;
+(3) A $\lambda$-abstraction now additionally specifies the type of the parameter: $\lambda x : \tau. t$.
+\wde{Simply typed $\lambda$-calculus rules}
+\begin{prooftree}
+    \hypo{x: \tau \in \Gamma}
+    \infer1[$A$]{\Gamma \vdash x:\tau}
+\end{prooftree}
+\begin{prooftree}
+    \hypo{x: \tau, \Gamma \vdash t : \tau}
+    \infer1[$\to_I$]{\Gamma \vdash (\lambda x: \sigma. t) : \sigma \to \tau}
+\end{prooftree}
+\begin{prooftree}
+    \hypo{\Gamma \vdash t: \sigma \to \tau}
+        \hypo{\Gamma \vdash u: \sigma}
+    \infer2[$\to_E$]{\Gamma \vdash t\ u: \tau}
+\end{prooftree}
+\wt{Uniqueness of Types} In a given context (types for free variables), any simply typed $\lambda$-terms has at most one type. Deciding this is in $\Pc$.
+\wt{Subject Reduction} Typing respects $\equiv_{\alpha\beta\eta}$, i.e. reduction does not affect a term's type.
+\wt{Strong normalisation} Any well-typed term evaluates in finitely many reductions to a unique irreducible term. If the type is a base type, this term is constant.
+\wde{$\fix$} 
+\begin{prooftree}
+    \hypo{\Gamma \vdash t: \tau \to \tau}
+    \infer1{\Gamma \vdash \fix t:\tau} 
+\end{prooftree} which $\beta$-reduces to: $\fix\ (\lambda x: \tau. t) \breduct t[^{\fix\ (\lambda x:\tau.\ t)}/_x]$

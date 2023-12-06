@@ -1,0 +1,10 @@
+\wde{Regular Languages} A language is \emph{regular} if it is recognised by a DFA, NFA, or $\epsilon$-NFA.
+\wt{Finite Reg. Languages} All finite languages are regular.
+\wde{Union} The \textit{union} of two languages $L_1$ and $L_2$, written $L_1 \cup L_2$, is the language that includes all strings of $L_1$ and all strings of $L_2$.
+\wde{Sequential Composition} The \textit{sequential composition} of two languages $L_1$ and $L_2$, written $L_1L_2$, is the language of strings that consist of a string in $L_1$ followed by a sting in $L_2$. $L_1L_2 = \{vw\ |\ v\in L_1, w\in L_2\}$.
+\wde{Kleene Closure} The \textit{Kleene closure} of a language $L$, written $L^*$, is the language of strings that consist wholly of zero or more strings in $L$. $L^* = \bigcup_{i \in \mathbb{N}} L^i$.
+\wt{Closure Properties of Reg. Langs} Let $L_1$ and $L_2$ be regular languages. Regular languages are closed under:
+\emph{Union:} $L_1 \cup L_2$ is a regular language;
+\emph{Sequential Composition:} $L_1L_2$ is a regular language;
+\emph{Kleene Closure:} $L_1^*$ is closed.
+\wde{Generalised NFA} A \textit{generalised NFA}, or GNFA, is an NFA where: Transitions have regular expressions on them instead of symbols; There is only one unique final state; and the transition relation is \textit{full}, except that the initial state has no incoming transitions, and the final state has no outgoing transitions.

@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\setlist{nosep}
+\titleformat{\subsection}[runin]{\normalfont\Large\bfseries}{\thesubsection.}{6pt}{}[]
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+
+
+% Disable warnings
+% chktex-file 1
+
+\input{style.sty}
+\input{defs.tex}
+
+% \fontsize{2}
+
+\begin{document}
+  \begin{multicols}{2}
+  %
+  % Week 1
+  %
+  % Lecture 1
+  \subsection*{Languages \& Finite Automata}
+  \input{src/wk1/l1}
+  % Lecture 2
+  \input{src/wk1/l2}
+  %
+  % Week 2
+  %
+  % Strikes
+  %
+  % Week 3
+  %
+  \input{src/wk3/l1}
+  \input{src/wk3/l2}
+  %
+  % Week 4
+  %
+  \input{src/wk4/l1}
+  \input{src/wk4/l2}
+  %
+  % Week 5
+  %
+  \input{src/wk5/l1}
+  \input{src/wk5/l2}
+  %
+  % Week 6
+  %
+  % Rest Week <3
+  %
+  % Week 7
+  %
+  \input{src/wk7/l1}
+  \input{src/wk7/l2}
+  %
+  % Week 8
+  %
+  \input{src/wk8/l1}
+  \subsection*{Lambda Calculus}
+  \input{src/wk8/l2}
+  %
+  % Week 9
+  %
+  \input{src/wk9/l1}
+  \end{multicols}
+\end{document}

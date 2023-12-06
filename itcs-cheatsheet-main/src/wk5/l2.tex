@@ -1,0 +1,21 @@
+\wde{Semi-Decidable} A problem $(D,Q)$ is \emph{semi-decidable} if there is a TM/RM that returns ``yes'' for any $d \in Q$, but may return ``no'' or loop forever when $d \notin Q$.
+\wde{Co-Semi-Decidable} A problem $(D, Q)$ is \emph{co-semi-decidable} if there is a TM/RM that returns ``no'' for any $d \notin Q$, but may return ``yes'' or loop forever when $d \in Q$.
+\wt{S.D. \& C.S.D. = D} Any problem that is both semi-decidable and co-semi-decidable is decidable.
+\wt{Semi-Decidable Complement} If a problem $P$ is semi-decidable, and vice versa.
+\wde{Enumerable} A set $S$ is enumerable if there is a bijection between $S$ and $\mathbb{N}$.
+\wa{Interleaving} Given $n \in \mathbb{N}$, we can check whether $n = \enc{M}$ for some machine $M$. Therefore, we can enumerate all machines $\enc{M_0},\enc{M_1},\ldots$.
+\begin{algorithmic}
+    \State $ms := \langle\rangle$; $i := 0$
+    \While{true} 
+        \State $ms := ms \mathrel{++} \langle\enc{M_i}\rangle$
+        \For{$\enc{M} \in ms$}
+            \State run $M$ for one step and update $ms$.
+            \If{$M$ has halted}
+                \State \textbf{output} $\enc{M}$; delete $M$ from $ms$
+            \EndIf
+        \EndFor
+        \State $i := i+1$
+    \EndWhile
+\end{algorithmic}
+\wt{S.D. is C.E.} A problem $P$ is semi-decidable if and only if $P$ is computably enumerable.
+\wt{Reduce for C.E.} To prove that a problem $P_2$ is not computably enumerable, show that there is a \emph{mapping} reduction from a known not-computably enumerable problem $P_1$ to $P_2$.

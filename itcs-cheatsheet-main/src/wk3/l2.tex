@@ -1,0 +1,5 @@
+\wde{Ambiguity} A grammar is \textit{ambigous} if there is more than one parse tree (or leftmost derivation) for a given string.
+\wde{PDA} A \textit{push-down automaton} (PDA) is a 6-tuple $(Q, \Sigma, \Gamma, \delta, q_0, F)$ where $(Q, \Sigma, \Gamma$ are all finite sets. $\Gamma$ is the stack alphabet, and $\delta$ now may take a stack symbol as input or return one as output: $\delta: Q \times \Sigma_\epsilon \times \Gamma_\epsilon \to \mathcal{P}(Q \times \Gamma_\epsilon)$. All other components are as with $\epsilon$-NFAs.
+\wde{PDA Acceptance} A string $w$ is accepted by a PDA if it ends in a final state, i.e. $\delta^*(q_0, w, \epsilon)$ gives a state $q$ and a stack $\gamma$ such that $q \in F$.
+\wt{CFL iff PDA} A language is context-free iff it is recoginised by a push-down automaton.
+\wpr{CFL Closure} Context-free languages are closed under: Union, Concatenation, Kleene Star, but not Intersection or Complementation.

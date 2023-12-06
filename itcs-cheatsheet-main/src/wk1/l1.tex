@@ -1,0 +1,21 @@
+\wde{DFA} A \textit{deterministic finite automaton} (DFA) is a quintuple $(Q, \Sigma, q_0, \delta, F)$ where
+\begin{itemize}
+    \item $Q$ is a \textbf{finite} set of \textit{states},
+    \item $\Sigma$ is the \textit{alphabet}, the set of symbols,
+    \item $q_0 \in Q$ is the \textit{initial state},
+    \item $\delta: Q \times \Sigma \to Q$ is the \textit{transition function},
+    \item $F \subseteq Q$ is the set of \textit{final states}.
+\end{itemize}
+\wde{Accepts} A DFA \textit{accepts} a string $w \in \Sigma^*$ if and only if $\delta^* (q_0, w) \in F$, where $\delta^*$ is $\delta$ applied successively for each symbol in $w$. The language of a DFA $\mathcal{L}(A) \subseteq \Sigma^*$ is the set of all strings accepted by $A$.
+\wde{NFA} A \textit{non-deterministic finite automaton} (NFA) is a quintuple $(Q, \Sigma, q_0, \delta, F)$ where
+\begin{itemize}
+    \item $Q$ is a \textbf{finite} set of \textit{states},
+    \item $\Sigma$ is the \textit{alphabet}, the set of symbols,
+    \item $q_0 \in Q$ is the \textit{initial state},
+    \item $\delta: Q \times \Sigma \to \mathcal{P}(Q)$ is the \textit{transition function},
+    \item $F \subseteq Q$ is the set of \textit{final states}.
+\end{itemize}
+\wde{Run}  A \textit{run} of an NFA $A$ on a string $w = a_1 a_2 \ldots a_k$ is a sequence of states $q_0 q_1 \ldots q_k$ in $Q$ such that: $q_0$ is the initial state; and for all $i = 1 \ldots k$ we have $q_i \in \delta(q_{i-1}, a_i)$.
+A run is accepting if the last state $q_k \in F$
+\wde{$\epsilon$-closure} Define the $\epsilon-closure$ $E(q)$ of a state $q$ as the set of all states reachable from $q$ by silent moves. that is $E(q)$ is the least set satisfying: $q \in E(q)$; and for any $s \in E(q)$, we also have $\delta(s, \epsilon) \subseteq E(q)$.
+We also extend this to sets, where $E(S) = \bigcup_{q \in S}E(q)$.

@@ -1,0 +1,38 @@
+\wde{$\lambda$-abstraction} A $\lambda$-term $(\lambda x. y)$ can be thought of as a function that, given an input bound to the variable $x$, returns the term $y$.
+\wl{$\lambda$-calc. properties} Function application is left associative: $f\ a\ b\ c = ((f\ a)\ b)\ c$. $\lambda$-abstraction extends as far as possible: $\lambda a.\ f\ a\ b = \lambda a. (f\ a\ b)$. All functions are unitary, multiple argument functions are modelled with nested $\lambda$-abstractions: $\lambda x.\lambda y.\ f\ y\ x$. $\lambda$-calculus is higher order: $\lambda f.\lambda g\lambda x.\ f\ (g\ x)$
+\wde{$\alpha$-equivalence} Programs that are semantically identical but differ in choice of bound variable names, such as $(\lambda x. \lambda x.\ x+x)$ and $\lambda a.\ \lambda y. y+y)$, are called $\alpha$-equivalent. We write $e_1 \equiv_{\alpha} e_2$ if $e_1$ is $\alpha$-equivalent to $e_2$. The relation $\equiv_{\alpha}$ is an equivalence relation.
+\wde{$\alpha$-renaming/conversion} The process of consistently renaming variables that preserve $\equiv_\alpha$ is called $\alpha$-renaming/conversion.
+\wde{Free Variable} A variable $x$ is free in a term $e$ if $x$ occurs in $e$ but is not bound by a $\lambda$-abstraction in $e$.
+\wde{$e[^t/_x]$ substitution} A substitution, written $e[^t/_x]$, is the replacement of all free  occurrences of $x$ in $e$ with the term $t$.
+\wde{Capture} Capture can occur for a substitution $e[^t/_x]$ whenever there is a bound variable in the term $e$ with the same name as a free variable occurring in $t$.
+\wde{$\beta$-reduction} Evaluating function applications is called $\beta$-reduction: $(\lambda x.\ t)\ u \mapsto_{\beta} t[^u/_x]$.
+\wt{$\beta$-reduction is congruence} 
+\begin{prooftree}
+    \infer0{(\lambda x.\ t)\ u \mapsto_{\beta} t[^u/_x]}
+\end{prooftree}
+\begin{prooftree}
+    \hypo{ t \breduct t'}
+    \infer1{s\ t \mapsto_{\beta} s\ t'}
+\end{prooftree}
+\begin{prooftree}
+    \hypo{ s \breduct s'}
+    \infer1{s\ t \mapsto_{\beta} s'\ t}
+\end{prooftree}
+\begin{prooftree}
+    \hypo{ t \breduct t'}
+    \infer1{\lambda x.\ t \mapsto_{\beta} \lambda x.\ t'}
+\end{prooftree}
+\wde{Call-by-name} Evaluate function arguments late (after application)
+\wde{Call-by-value} Evaluate function arguments early (before application)
+\wt{Church-Rosser} If a term $t$ $\beta$-reduces to two terms $a$ and $b$, then there is a common term $t'$ to which both $a$ and $b$ are $\beta$-reducible.
+\wde{$\eta$-reduction} $(\lambda x.\ f\ x) \mapsto_\eta f$. This reduction preserves confluence (and therefore uniqueness of normal forms), so we have a notion of $\alpha\beta\eta$-equivalence.
+\wde{Normal Form} A term that cannot be reduced further is called a normal form. Normal forms are unique.
+\wde{$\lambda$-Boolean} $\True \equiv \lambda a.\ \lambda b.\ a$; 
+$\False \equiv \lambda a.\ \lambda b.\ b$; 
+$\lIf \equiv \lambda c.\ \lambda t.\ \lambda e.\ c\ t\ e$;
+$\Not \equiv \lambda x.\ \lambda a.\ \lambda b.\ x\ b\ a$
+\wde{$\lambda$-$\mathbb{N}$} $\mathrm{Zero} \equiv \lambda f.\ \lambda x.\ x$; 
+$\mathrm{One} \equiv \lambda f.\ \lambda x.\ f\ x$; 
+$\mathrm{Two} \equiv \lambda f.\ \lambda x.\ f\ (f\ x)$; 
+$\mathrm{Suc} \equiv \lambda n.\ \lambda f.\ \lambda x.\ f\ (n\ f\ x)$; 
+$\mathrm{Add} \equiv \lambda m.\ \lambda n.\ \lambda f.\ \lambda x.\ m\ f\ (n\ f\ x)$

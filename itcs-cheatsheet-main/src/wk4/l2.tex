@@ -1,0 +1,8 @@
+\wde{$\enc{M}$} An encoding of a machine $M$ is written $\enc{M}$.
+\wt{Encoding an RM} We can encode an RM $M$ with $n$ instructions and $m$ register as: $\enc{\Inc(i)} = \pair{0, i}$;
+$\enc{\Decjz(i,j)} = \pair{1, i, j}$;
+$\enc{P} = \pair{\enc{I_0}, \ldots, \enc{I_{n-1}}}$;
+$\enc{R} = \pair{R_0, \ldots, R_{m-1}}$;
+$\enc{M} = \pair{\enc{P}, \enc{R}}$.
+\wde{TM} A Turing Machine is a 7-tuple $(Q, \Sigma, \Gamma, \delta, q_0, q_{\text{accept}}, q_{\text{reject}})$: $Q$: states; $\Sigma$: Input symbols; $\Gamma \supseteq \Sigma$: \textit{tape} symbols, including a blank symbol $\sqcup$; $\delta: Q \times \Gamma \to Q \times \Gamma \times \{\pm 1\}$; $q_0, q_{\text{accept}}, q_{\text{reject}} \in Q$: start, accept, reject states.
+\wpr{Church-Turing Thesis} Any problem is computable by any model of computation iff it is computable by a TM.
