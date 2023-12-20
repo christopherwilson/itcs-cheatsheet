@@ -1,7 +1,7 @@
 \wde{Semi-Decidable} A problem $(D,Q)$ is \emph{semi-decidable} if there is a TM/RM that returns ``yes'' for any $d \in Q$, but may return ``no'' or loop forever when $d \notin Q$.
 \wde{Co-Semi-Decidable} A problem $(D, Q)$ is \emph{co-semi-decidable} if there is a TM/RM that returns ``no'' for any $d \notin Q$, but may return ``yes'' or loop forever when $d \in Q$.
 \wt{S.D. \& C.S.D. = D} Any problem that is both semi-decidable and co-semi-decidable is decidable.
-\wt{Semi-Decidable Complement} If a problem $P$ is semi-decidable, and vice versa.
+\wt{Semi-Decidable Complement} If a problem $P$ is semi-decidable, then it's complement $\bar{P}$ is co-semi-decidable, and vice versa.
 \wde{Enumerable} A set $S$ is enumerable if there is a bijection between $S$ and $\mathbb{N}$.
 \wde{Computably Enumerable} A set $S$ is computably enumerable if the enumeration function $f: \mathbb{N} \to S$ is computable.
 \wa{Interleaving} Given $n \in \mathbb{N}$, we can check whether $n = \enc{M}$ for some machine $M$. Therefore, we can enumerate all machines $\enc{M_0},\enc{M_1},\ldots$.
