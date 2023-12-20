@@ -9,7 +9,7 @@
     \infer1[$A$]{\Gamma \vdash x:\tau}
 \end{prooftree}
 \begin{prooftree}
-    \hypo{x: \tau, \Gamma \vdash t : \tau}
+    \hypo{x: \sigma, \Gamma \vdash t : \tau}
     \infer1[$\to_I$]{\Gamma \vdash (\lambda x: \sigma. t) : \sigma \to \tau}
 \end{prooftree}
 \begin{prooftree}
