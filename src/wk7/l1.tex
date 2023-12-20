@@ -3,7 +3,7 @@
 $f(n) \le c \cdot g(n)$.
 Similarly $f(n) \in \Omega(g(n))$ if: 
 $f(n) \ge c \cdot g(n)$.
-\wde{$\TIME$ complexity class} Let $f : \mathbb{N} \to \mathbb{R}_{\ge 0}$. A \textit{time complexity class} $\TIME(t(n))$ to be the collection of all problems that are decidable by a machine in $\bO(t(n))$ time.
+\wde{$\TIME$ complexity class} Let $t : \mathbb{N} \to \mathbb{R}_{\ge 0}$. A \textit{time complexity class} $\TIME(t(n))$ to be the collection of all problems that are decidable by a machine in $\bO(t(n))$ time.
 \wde{$\Pc$olynomial Time} $\Pc = \bigcup_{k \in \mathbb{N}} \TIME(n^k)$. That is, the class of problems decidable with some (deterministic) polynomial time complexity. Problems in $\Pc$ are called \textit{tractable}, and the class is robust.
 Any problem not in $\Pc$ is $\Omega(n^k)\ \forall k$.
 \wde{Polynomially-bounded RM} is an $RM$ together with a polynomial with order $k$ for some $k$, such that given an input $w$, it will always halt after executing $|w|^k$ instructions. A problem $Q$ is in $\Pc$ iff it is computed by polynomially-bounded RM.
